@@ -1,0 +1,45 @@
+{% extends 'template.html' %}
+{% load static %}
+
+
+{% block header %}
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+    <div class="container">
+      <h1 class="masthead-heading mb-0">CADASTRO</h1>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock %}
+
+{% block section %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div >
+      <form class="" action="index.html" method="post">
+          <label>Nome:</label><br/>
+          <input type="text" name="nome"><br/>
+
+          <label>Email:</label><br/>
+          <input type="text" name="email"><br/>
+
+          <label>Telefone:</label><br/>
+          <input name="telefone"><br/>
+
+          <label>Mensagem:</label><br/>
+          <textarea name="mensagem" rows="8" cols="80"></textarea><br/>
+
+          <button type="button" name="inscrever">INSCREVER</button>
+        </form>
+      </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
+{% endblock %}

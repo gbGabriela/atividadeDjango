@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>One Page Wonder - Start Bootstrap Template</title>
+  <title>Gabriela's Informations</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -28,17 +28,19 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="{% url 'curriculo' %}">G A B R I E L A'S  C U R R I C U L O</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive"
+      aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <a class="nav-link" href="{% url 'sobre' %}">SOBRE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
+            <a class="nav-link" href="{% url 'cadastro' %}">CADASTRAR</a>
           </li>
         </ul>
       </div>
@@ -50,9 +52,9 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-        <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+        <h1 class="masthead-heading mb-0">SHARING KNOWLEDGE</h1>
+        <h2 class="masthead-subheading mb-0">cursos 100% gratuitos para quem deseja compartilhar conhecimento</h2>
+        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">CADASTRAR</a>
       </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
@@ -69,13 +71,15 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="{% static 'img/01.jpg' %}" alt="">
+            <img class="img-fluid rounded-circle" src="{% static 'natureza.jpg' %}" alt="">
           </div>
         </div>
         <div class="col-lg-6 order-lg-1">
           <div class="p-5">
-            <h2 class="display-4">For those about to rock...</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            <h2 class="display-4">Pra quem gosta de natureza...</h2>
+            <p>Nesse espaço você encontrará conteúdos sobre geografia, física, astronomia, ciência...
+              Tudo aquilo que compartilhe conhecimento sobre o funcionamento da natureza.
+          </p>
           </div>
         </div>
       </div>
@@ -87,13 +91,13 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="{% static 'img/02.jpg' %}" alt="">
+            <img class="img-fluid rounded-circle" src="{% static 'natureza.jpg' %}" alt="">
           </div>
         </div>
         <div class="col-lg-6">
           <div class="p-5">
-            <h2 class="display-4">We salute you!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            <h2 class="display-4">Pra quem gosta de instrumentos...</h2>
+            <p>Nesse espaço você encontrará conteúdos sobre teoria e prática musical.</p>
           </div>
         </div>
       </div>
@@ -111,7 +115,10 @@
         <div class="col-lg-6 order-lg-1">
           <div class="p-5">
             <h2 class="display-4">Let there be rock!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quod aliquid, mollitia odio veniam sit iste esse assumenda amet
+              aperiam exercitationem, ea animi blanditiis recusandae! Ratione
+              voluptatum molestiae adipisci, beatae obcaecati.</p>
           </div>
         </div>
       </div>
