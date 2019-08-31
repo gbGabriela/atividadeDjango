@@ -28,6 +28,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}">HOME</a>
       <a class="navbar-brand" href="{% url 'curriculo' %}">GABRIELA'S CURRICULO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -36,12 +37,48 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Cadastros
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'cadastro-professor' %}">Professor</a>
+              <a class="dropdown-item" href="{% url 'cadastro-aluno' %}">Aluno</a>
+              <a class="dropdown-item" href="{% url 'cadastro-curso' %}">Curso</a>
+              <a class="dropdown-item" href="{% url 'cadastro-inscricao' %}">Inscrição</a>
+              <a class="dropdown-item" href="{% url 'cadastro-certificado' %}">Certificado</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Consulta
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'listar-professor' %}">Professor</a>
+              <a class="dropdown-item" href="{% url 'listar-aluno' %}">Aluno</a>
+              <a class="dropdown-item" href="{% url 'listar-curso' %}">Curso</a>
+              <a class="dropdown-item" href="{% url 'listar-inscricao' %}">Inscrição</a>
+              <a class="dropdown-item" href="{% url 'listar-certificado' %}">Certificado</a>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'sobre' %}">SOBRE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'cadastro' %}">CADASTRAR</a>
+            <a class="nav-link" href="{% url 'logout' %}">SAIR</a>
           </li>
+            {% else %}
+           <li class="nav-item">
+             <a class="nav-link" href="{% url 'login' %}" >ENTRAR</a>
+           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'alterar-senha' %}">ALTERAR SENHA</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -54,7 +91,7 @@
       <div class="container">
         <h1 class="masthead-heading mb-0">SHARING KNOWLEDGE</h1>
         <h2 class="masthead-subheading mb-0">cursos 100% gratuitos para quem deseja compartilhar seu conhecimento com o mundo</h2>
-        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">CADASTRAR</a>
+        <a href="{% url 'login' %}" class="btn btn-primary btn-xl rounded-pill mt-5">ACESSAR</a>
       </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
@@ -133,6 +170,13 @@
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   {% endblock %}
+
+  <script src="{% static 'vendor/mask/jquery.mask.min.js' %}"></script>
+  <script>
+    $(document).ready(function () {
+        $('input[name*=cpf]').mask('000.000.000-00', {reverse: true});
+    });
+  </script>
 
 </body>
 

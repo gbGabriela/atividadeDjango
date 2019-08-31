@@ -1,12 +1,27 @@
 {% extends 'template.html' %}
-{% load static %}
+{% load crispy_forms_tags %}
 
-<form method="post">
-    	{% csrf_token %}
+{% block section %}
+<div class="container m-5">
+  {% if botao == 'Excluir' %}
+      <hr>
+      <h4 class="font-weight-normal text-dark" >Registro a excluir: {{ object }}</h4>
+      <hr>
+  {% endif %}
 
-    	{{ form.as_p }}
+  <form method="post">
+      	{% csrf_token %}
 
-    	<button type="submit" class="btn btn-success">
-     	      	Cadastrar
-    	</button>
-</form>
+      	{{ form|crispy }}
+
+        <button type="submit" class="btn {{ classeBotao }}">
+          {{ botao }}
+        </button>
+
+        <a href="{% url 'index' %}" class="btn btn-secondary">
+          Voltar
+        </a>
+
+  </form>
+</div>
+{% endblock %}
